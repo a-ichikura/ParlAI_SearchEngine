@@ -201,7 +201,8 @@ class SearchABC(http.server.BaseHTTPRequestHandler):
 
 class GoogleSearchServer(SearchABC):
     def search(self, q: str, n: int) -> Generator[str, None, None]:
-        return googlesearch.search(q, num=n, stop=None, pause=_DELAY_SEARCH)
+        #return googlesearch.search(q, num_results=n, stop=None, pause=_DELAY_SEARCH)
+        return googlesearch.search(q, num_results=n)
 
 
 class Application:
